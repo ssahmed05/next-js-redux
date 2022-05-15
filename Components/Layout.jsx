@@ -13,24 +13,25 @@ const Layout = ({ children }) => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item active">
-                            <Link href="/">
-                            <a className="nav-link" to="/">Home</a>
-                            </Link>
-                        </li>
-                        <li className="nav-item active">
-                            <Link href="/about">
-                            <a className="nav-link">About</a>
-                            </Link>
-                        </li>
-                        <li className="nav-item active">
-                            <Link href="/bank">
-                            <a className="nav-link">Bank</a>
-                            </Link>
-                        </li>
-                        
+                            <li className="nav-item">
+                                <Link href="/">
+                                <a className="nav-link" to="/">Home</a>
+                                </Link>
+                            </li>
+                            <li className="nav-item active">
+                                <Link href="/about">
+                                <a className="nav-link">About</a>
+                                </Link>
+                            </li>
+                            <li className="nav-item">
+                                <Link href="/bank">
+                                <a className="nav-link">Bank</a>
+                                </Link>
+                            </li>
                         </ul>
-                      
+                        <button className="btn btn-success">
+                            Your Balance <b>$123000/-</b>
+                        </button>
                     </div>
                 </div>
             </nav>

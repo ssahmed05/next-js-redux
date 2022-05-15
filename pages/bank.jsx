@@ -4,7 +4,7 @@ const bank = () => {
   return (
       <>
         <div className="row">
-            <div className="col-md-12">
+            <div className="col-md-12 mt-5 pt-5">
                 <h2 className='text-center'>Bank</h2>
             </div>
         </div>
