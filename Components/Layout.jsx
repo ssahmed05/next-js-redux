@@ -1,6 +1,10 @@
 import Link from "next/link"
+import { useSelector} from "react-redux"
 
 const Layout = ({ children }) => {
+
+    const state = useSelector(state => state);      
+
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -30,7 +34,7 @@ const Layout = ({ children }) => {
                             </li>
                         </ul>
                         <button className="btn btn-success">
-                            Your Balance <b>$123000/-</b>
+                            Your Balance <b>${state.amount}/-</b>
                         </button>
                     </div>
                 </div>

@@ -11,10 +11,10 @@ import Layout from '../Components/Layout';
 function MyApp({ Component, pageProps }) {
   return (
     <>
+    <Provider store={store}>
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Head>
-    <Provider store={store}>
       <Layout>
         <Component {...pageProps} />
       </Layout>

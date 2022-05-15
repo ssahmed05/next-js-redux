@@ -1,6 +1,14 @@
-import React from 'react'
+/* eslint-disable react-hooks/rules-of-hooks */
+import React, { useState } from 'react'
+import { useSelector,useDispatch } from 'react-redux'
+import { bindActionCreators } from 'redux';
+import {bindActionCreators as actions} from "../store/index"
+const bank = (props) => {
+    const dispatch = useDispatch();
+    const {depositMoney, withDrawMoney} = bindActionCreators(actions, dispatch)
 
-const bank = () => {
+    const [money, setMoney] = useState(0);
+
   return (
       <>
         <div className="row">
@@ -10,15 +18,15 @@ const bank = () => {
         </div>
         <div className="row align-items-baseline">
             <div className="col-4 text-end">
-                <button className="btn btn-primary">
+                <button className="btn btn-primary" onClick={()=> depositMoney(money)}>
                     Deposit
                 </button>
             </div>
             <div className="col-4">
-                <input type="text" name="money" className="form-control" />
+                <input type="text" name="money" className="form-control" onChange={(e)=> setMoney(e.target.value)} />
             </div>
             <div className="col-4">
-                <button className="btn btn-primary">
+                <button className="btn btn-primary" onClick={()=> withDrawMoney(money)}>
                     Withdraw
                 </button>
             </div>
