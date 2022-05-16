@@ -23,16 +23,22 @@ const bank = (props) => {
         </div>
         <div className="row align-items-baseline">
             <div className="col-4 text-end">
+                {money <= 0 ? 
+                <button disabled className="btn btn-primary" onClick={()=> depositMoney(money)}>
+                    Deposit
+                </button>
+                :
                 <button className="btn btn-primary" onClick={()=> depositMoney(money)}>
                     Deposit
                 </button>
+                }
             </div>
             <div className="col-4">
-                <input type="text" name="money" className="form-control" onChange={(e)=> setMoney(e.target.value)} />
+                <input type="number" name="money" className="form-control" onChange={(e)=> setMoney(e.target.value)} />
             </div>
             <div className="col-4">
 
-                {money > balance.amount ? 
+                {money > balance.amount || money <= 0 ? 
                 <button disabled className="btn btn-primary" >
                     Withdraw
                 </button>
